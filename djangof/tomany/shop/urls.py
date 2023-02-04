@@ -13,4 +13,10 @@ urlpatterns = [
     path('deletesingle/', DeleteSingleCart.as_view()),
     path('deletecart/', DeleteCart.as_view()),
     path('ordernow/', OrderCreate.as_view()),
+    path('user/', Userdata.as_view()),
+    path('signup/', UserRegistrationView.as_view()),
+    path('log/', UserLoginView.as_view()),
+    path('profile/', UserProfileView.as_view()),
+    path('changepass/', UserChangePasswordView.as_view()),
+    path('send-password-reset-email/', SendPasswordResetEmailView.as_view()),
 ]

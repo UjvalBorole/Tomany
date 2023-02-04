@@ -6,6 +6,7 @@ import 'package:flutterd/screens/login_screen.dart';
 import 'package:flutterd/screens/order_history_screen.dart';
 import 'package:flutterd/screens/order_screen.dart';
 import 'package:flutterd/screens/product_detail_screen.dart';
+import 'package:flutterd/screens/profile.dart';
 import 'package:flutterd/screens/register_screen.dart';
 import 'package:flutterd/state/cart_state.dart';
 import 'package:flutterd/state/product_state.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         // home: HomeScreen(),
         title: 'ToMany',
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: Color(0xFFCEDDEE),
+        ),
         home: FutureBuilder(
           future: storage.ready,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
             return HomeScreen();
           },
         ),
-        // initialRoute: HomeScreen.routeName,
+        // initialRoute: HomePage.routeName,
         routes: {
           HomeScreen.routeName: (context) => HomeScreen(),
           ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
@@ -55,6 +59,7 @@ class MyApp extends StatelessWidget {
           CartScreen.routeName: (context) => CartScreen(),
           OrderScreen.routeName: (context) => OrderScreen(),
           OrderNow.routeName: (context) => OrderNow(),
+          Profile.routeName: (context) => Profile(),
         },
       ),
     );
